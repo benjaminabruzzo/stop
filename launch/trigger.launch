@@ -1,0 +1,10 @@
+<launch>
+	<arg name="launcher" 		default="stopper" />
+	<arg name="stop_topic" 		default="/stop/shutdown" />
+
+	<node pkg="stop"	type="stop_trigger"	output="screen" name="stopTrigger_$(arg launcher)"	 required="true">
+		<param name="stop_topic" 	value="$(arg stop_topic)"/>
+	</node>
+
+
+</launch>
