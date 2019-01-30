@@ -1,0 +1,2 @@
+# stop
+ros shutdown node
