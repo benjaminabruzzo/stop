@@ -1,0 +1,14 @@
+<launch>
+	<arg name="launcher" 			default="stopper" />
+	<arg name="stop_topic" 		default="/stop/shutdown" />
+
+    <include file="$(find stop)/launch/listener.launch">
+			<arg name="launcher" 			value="$(arg launcher)" />
+			<arg name="stop_topic" 		value="/stop/shutdown" />
+    </include>
+
+    <include file="$(find stop)/launch/trigger.launch">
+			<arg name="launcher" 			value="$(arg launcher)" />
+			<arg name="stop_topic" 		value="/stop/shutdown" />
+    </include>
+</launch>
